@@ -1,4 +1,5 @@
 export const story = [
+    {type: "cloud"},
     { type: "title", title: "운수 좋은 날 2020" },
 
 
