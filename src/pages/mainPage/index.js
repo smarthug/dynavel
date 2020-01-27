@@ -3,7 +3,7 @@ import SwipeableViews from "react-swipeable-views";
 import { virtualize, bindKeyboard } from "react-swipeable-views-utils";
 import { makeStyles } from '@material-ui/core/styles'
 
-import { Plugins } from "../../Plugins"
+import { Plugins } from "../../pageComponents"
 
 import { story } from '../../data/oneluckyday'
 

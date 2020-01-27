@@ -1,35 +1,88 @@
 import React, { useRef, useEffect } from 'react';
-
-import dat from 'dat.gui'
-import { useSettingStore, settingObj } from '../../Plugins/index'
-
-var test = {
-    a: 999,
-    b: 888,
-    c: 777
-
-}
-
-export default function Setting() {
-    const customContainer = useRef();
-    const title = useSettingStore(state => state.title)
-    const set = useSettingStore(state => state.set)
+import './index.css'
 
 
 
-    useEffect(() => {
-        var gui = new dat.GUI({ autoPlace: false });
 
-        var f = gui.addFolder("title")
-        // for loop
-        f.add({...settingObj["title"]}, "color").onFinishChange(v => { set((state) => { state.title.color = `${v}` }) })
-        f.open();
-        customContainer.current.appendChild(gui.domElement)
-        console.log("setting created")
-    }, [])
+
+
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import List from '@material-ui/core/List';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import CloseIcon from '@material-ui/icons/Close';
+import Slide from '@material-ui/core/Slide';
+
+import DatGuiComp from './datguiComp'
+
+
+
+const useStyles = makeStyles(theme => ({
+    appBar: {
+        position: 'relative',
+    },
+    title: {
+        marginLeft: theme.spacing(2),
+        flex: 1,
+    },
+
+    tempSettingBtn: {
+        position: "absolute",
+        zIndex: 3
+    }
+}));
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+});
+
+function App() {
+
+    const classes = useStyles();
+    // 글로벌 관리 ?
+    const [open, setOpen] = React.useState(false);
+
+ 
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
 
     return (
-        <div ref={customContainer}></div>
-    )
+        <div>
+            <button className={classes.tempSettingBtn} onClick={handleClickOpen}>Setting</button>
+            <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+                <AppBar className={classes.appBar}>
+                    <Toolbar>
+                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                            <CloseIcon />
+                        </IconButton>
+                        <Typography variant="h6" className={classes.title}>
+                            Sound
+                        </Typography>
+                        <Button autoFocus color="inherit" onClick={handleClose}>
+                            save
+                        </Button>
+                    </Toolbar>
+                </AppBar>
+                <List >
+                    <DatGuiComp />
+                </List>
+            </Dialog>
+        </div>
+
+
+    );
 }
+
+export default App;
+
 

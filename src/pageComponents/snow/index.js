@@ -1,9 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, {  useRef, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { useSettingStore } from './index'
 
-
-import * as THREE from 'three'
 
 import ParticleField from "react-particles-webgl";
 
@@ -65,8 +62,9 @@ const useStyles = makeStyles(theme => ({
     },
     hintOverlay: {
         position: "absolute",
+        width:"100%",
         top: "25%",
-        left: "25%",
+        // left: "25%",
         // height: "10vh",
         pointerEvents: "none",
         // indexZ: 999,

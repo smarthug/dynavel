@@ -3,14 +3,14 @@ import produce from "immer"
 
 import TextPage from './text'
 import TitlePage, { titleSetting } from './title'
-import CloudPage from './cloud'
+import snowPage from './snow'
 
 
 
 export const Plugins = {
     title: TitlePage,
     text: TextPage,
-    cloud: CloudPage,
+    snow: snowPage,
 }
 
 export const [useSettingStore] = create(set => ({

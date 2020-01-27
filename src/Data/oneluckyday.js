@@ -1,5 +1,5 @@
 export const story = [
-    {type: "cloud"},
+    //{type: "cloud"},
     { type: "title", title: "운수 좋은 날 2020" },
 
 
@@ -22,6 +22,7 @@ export const story = [
         컬컬한 목에 모주 한 잔도 적실 수 있거니와 그보다도 앓는 아내에게 설렁탕 한 그릇도 사다줄 수 있음이다.
         그의 아내가 기침으로 쿨럭거리기는 벌써 달포가 넘었다.` 
     },
+    {type:"snow"}
     
 
 

@@ -1,13 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import {useSettingStore} from './index'
-
-
-
+import { useSettingStore } from './index'
 
 
 export const titleSetting = {
-    color: "blue",
+    color: "white",
     textAlign: "center",
 }
 
@@ -23,7 +20,7 @@ export default function TitlePage(props) {
     return (
         <div>
 
-            <h1 className={classes.title} style={{color:color}}>{props.v.title}</h1>
+            <h1 className={classes.title} style={{ color: color }}>{props.v.title}</h1>
 
         </div>
     )
