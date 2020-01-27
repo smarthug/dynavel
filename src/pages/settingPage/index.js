@@ -17,6 +17,9 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Settings';
+
 import DatGuiComp from './datguiComp'
 
 
@@ -32,7 +35,9 @@ const useStyles = makeStyles(theme => ({
 
     tempSettingBtn: {
         position: "absolute",
-        zIndex: 3
+        zIndex: 3,
+        backgroundColor: "#11ffee00",
+        color:"white"
     }
 }));
 
@@ -46,7 +51,7 @@ function App() {
     // 글로벌 관리 ?
     const [open, setOpen] = React.useState(false);
 
- 
+
     const handleClickOpen = () => {
         setOpen(true);
     };
@@ -58,7 +63,10 @@ function App() {
 
     return (
         <div>
-            <button className={classes.tempSettingBtn} onClick={handleClickOpen}>Setting</button>
+            {/* <button className={classes.tempSettingBtn} onClick={handleClickOpen}>Setting</button> */}
+            <Fab className={classes.tempSettingBtn} onClick={handleClickOpen}  aria-label="add">
+                <AddIcon />
+            </Fab>
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
                 <AppBar className={classes.appBar}>
                     <Toolbar>
