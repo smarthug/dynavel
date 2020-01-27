@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
         position: "absolute",
         zIndex: 3,
         backgroundColor: "#11ffee00",
-        color:"white"
+        color: "white"
     }
 }));
 
@@ -64,7 +64,7 @@ function App() {
     return (
         <div>
             {/* <button className={classes.tempSettingBtn} onClick={handleClickOpen}>Setting</button> */}
-            <Fab className={classes.tempSettingBtn} onClick={handleClickOpen}  aria-label="add">
+            <Fab className={classes.tempSettingBtn} onClick={handleClickOpen} aria-label="add">
                 <AddIcon />
             </Fab>
             <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>

@@ -74,17 +74,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function CloudPage(props) {
     const classes = useStyles()
-
-    const myRef = useRef(null)
-
-    useEffect(() => {
-
-    }, [])
+    
 
 
 
     return (
-        <div className={classes.root} ref={myRef}>
+        <div className={classes.root} >
             <ParticleField config={config} />
             <h1 className={classes.hintOverlay}>운수 좋은 날 2020</h1>
         </div>
