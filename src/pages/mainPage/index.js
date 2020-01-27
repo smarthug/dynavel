@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { Plugins } from "../../Plugins"
 
-import { story } from '../../Data/oneluckyday'
+import { story } from '../../data/oneluckyday'
 
 
 const VirtualizeSwipeableViews = bindKeyboard(virtualize(SwipeableViews));
