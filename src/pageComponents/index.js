@@ -1,7 +1,7 @@
 import create from 'zustand'
 import produce from "immer"
 
-import TextPage from './text'
+import TextPage, {textSetting} from './text'
 import TitlePage, { titleSetting } from './title'
 import snowPage from './snow'
 
@@ -16,9 +16,11 @@ export const Plugins = {
 export const [useSettingStore] = create(set => ({
     nested: { structure: { contains: { a: "value" } } },
     title: titleSetting,
+    text: textSetting,
     set: fn => set(produce(fn)),
 }))
 
 export const settingObj = {
-    title: titleSetting
+    title: titleSetting,
+    text: textSetting
 }

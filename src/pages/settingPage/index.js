@@ -81,7 +81,7 @@ function App() {
                         </Button>
                     </Toolbar>
                 </AppBar>
-                <List >
+                <List style={{padding: "0px"}} >
                     <DatGuiComp />
                 </List>
             </Dialog>

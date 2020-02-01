@@ -6,6 +6,7 @@ import { useSettingStore } from './index'
 export const titleSetting = {
     color: "white",
     textAlign: "center",
+    title: 'hihi'
 }
 
 const useStyles = makeStyles(theme => ({
