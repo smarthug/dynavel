@@ -15,7 +15,7 @@
     "react-particles-webgl": "^1.0.10",
     "react-scripts": "3.3.0",
     "react-swipeable-views": "^0.13.3",
-    "three": "^0.112.1",
+    "three": "^0.125.0",
     "zustand": "^2.2.2"
   },
   "scripts": {
